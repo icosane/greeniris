@@ -92,3 +92,6 @@ end program
 
 Сохраните файл как *hello.f90*
 *Ctrl+B* скомпилирует файл и выведет результат. В выпадающем меню выбрать *Fortran - Run*
+
+#### Sources
+Original article by Fortran-lang.org [here](https://fortran-lang.org/learn/os_setup). Translated for my classmates by me. 
