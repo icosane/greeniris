@@ -1,37 +1,81 @@
-## Welcome to GitHub Pages
+## Настройка Fortran в SublimeText 
 
-You can use the [editor on GitHub](https://github.com/icosane/greeniris/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Краткое руководство по настройке Fortran в SublimeText. Как минимум, часть гайда будет работать и для VSCode, Atom, Notepad++.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Компилятор Fortran
 
-### Markdown
+Существует несколько различных компиляторов Fortran, список можно посмотреть [здесь](https://fortran-lang.org/compilers/). Из них бесплатными являются только GFortran, Flang, и LFortran. Также, NVIDIA и Intel предлагают свои компиляторы бесплатно, но NVFortran (NVIDIA) доступен только для систем Linux, а Intel oneAPI доступен для систем Linux, Windows и macOS. В данном руководстве мы будем использовать GFortran. 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+#### Windows
+GFortran можно скачать [здесь](http://www.equation.com/servlet/equation.cmd?fa=fortran). Опять же, существует несколько способов установки GFortran, на мой взягляд этот является самым простым. Но вы также можете попробовать [TDM GCC](https://jmeubank.github.io/tdm-gcc/articles/2020-03/9.2.0-release) и [MinGW](http://mingw-w64.org/doku.php/download/mingw-builds). 
 
-```markdown
-Syntax highlighted code block
+Выбираем версию *11.1.0* под вашу разрядность операционной системы и скачиваем установщих. В установщике просто соглашаемся со всем до конца установки.
+После завершения установки нажать *Win+PauseBreak*, выбрать в меню *Дополнительные параметры системы > Переменные среды > Системные переменные > Path (изменить)*. Выбрать *Создать* и добавить следующую строку:
+```
+‪C:\Users\<имя пользователя>\gcc\bin\gfortran.exe
+```
+где вместо *<имя пользователя>* вставить свое имя пользователя. Узнать его можно выполнив *Win+R* и набрав cmd. *"C\Users\ ваше имя пользователя здесь"*
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+#### Mac OS
+Если у вас установлен Xcode, откройте окно терминала и введите:
+```
+xcode-select --install
+```
+Либо воспользуйтесь установочным [файлом](https://github.com/fxcoudert/gfortran-for-macOS/releases).
+Homebrew:
+```
+port search gcc
+sudo port install gcc10
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Текстовый редактор
 
-### Jekyll Themes
+Как и написано в заголовке, я использовал [SublimeText](https://www.sublimetext.com/). Можно также воспользоваться:
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/icosane/greeniris/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+* [Atom](https://atom.io/)
+* [Emacs](https://www.gnu.org/software/emacs/)
+* [NotePad++](https://notepad-plus-plus.org/)
+* [Vim](https://www.vim.org/) и [Neovim](https://neovim.io/)
+* [Visual Studio Code](https://code.visualstudio.com/)
 
-### Support or Contact
+#### Настройка SublimeText
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+После запуска нажмите *Сtrl+Shift+P* и наберите *Install Package*.
+После чего установите следующие пакеты:
+* Fortran
+* Sublimelinter
+* sublimelint
+(после установки каждого пакета необходимо заново повторять *Ctrl+Shift+P* и *Install Package*)
+
+Последнее что нужно сделать
+В меню (Alt) выберете Tools > Build System > New Build System
+Скопируйте и вставьте туда следующее:
+```
+{
+    "shell_cmd": "gfortran \"${file}\" -o \"${file_path}/${file_base_name}\"",
+    "file_regex": "^(?xi:( ^[/] [^:]* ) : (\\d+) : (\\d+) :)",
+    "working_dir": "${file_path}",
+    "selector": "source.modern-fortran, source.fixedform-fortran",
+    "syntax": "GFortranBuild.sublime-syntax",
+
+    "variants":
+    [
+        {
+            "name": "Run",
+            "shell_cmd": "gfortran \"${file}\" -o \"${file_path}/${file_base_name}\" && \"${file_path}/${file_base_name}\""
+        }
+    ]
+}
+```
+Сохраните файл как Fortran.sublime-build. В меню (Alt) выберете Tools > Build System > Fortran.
+
+### Тестовая программа
+
+```fortran
+program hello
+    print *, "Hello World!"
+end program
+```
+
+Сохраните файл как *hello.f90*
+*Ctrl+B* скомпилирует файл и выведет результат. В выпадающем меню выбрать *Fortran - Run*
