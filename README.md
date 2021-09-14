@@ -1,4 +1,4 @@
-## Настройка Fortran в SublimeText 
+## Настройка Fortran для использования текствого редактора
 
 Краткое руководство по настройке Fortran в SublimeText. Как минимум, часть гайда будет работать и для VSCode, Atom, Notepad++.
 
@@ -70,6 +70,17 @@ sudo port install gcc10
 }
 ```
 Сохраните файл как Fortran.sublime-build. В меню (Alt) выберете Tools > Build System > Fortran.
+
+#### Настройка Visual Studio Code 
+Когда редактор открыт, в главном пользовательском интерфейсе, в колонке с кнопками слева, есть значок в форме четырех квадратов, чтобы открыть Магазин расширений. Для разработки на языке Fortran предлагаются следующие расширения:
+
+ * [Modern Fortran](https://marketplace.visualstudio.com/items?itemName=krvajalm.linter-gfortran)
+ * [FORTRAN IntelliSense](https://marketplace.visualstudio.com/items?itemName=hansec.fortran-ls)
+
+Зависит от предыдущего расширения Modern Fortran, а также от Python и [Fortran Language Server](https://github.com/hansec/fortran-language-server), которые должны быть установлены отдельно.
+* [Fortran Breakpoint Support](https://marketplace.visualstudio.com/items?itemName=ekibun.fortranbreaker)
+
+Примечание: И Modern Fortran, и Fortran Breakpoint Support требуют ms-vscode.cpptools, для этого вам также необходимо установить расширение [C/C++ by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools).
 
 ### Тестовая программа
 
