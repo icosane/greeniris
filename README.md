@@ -1,4 +1,4 @@
-## Настройка Fortran для использования в текством редакторе (Visual Studio Code, Sublime Text, Atom, Notepad++, etc.)
+## Настройка Fortran для использования в текстовом редакторе (Visual Studio Code, Sublime Text, Atom, Notepad++, etc.)
 
 Краткое руководство по настройке Fortran в SublimeText. Как минимум, часть гайда будет работать и для VSCode, Atom, Notepad++.
 
