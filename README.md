@@ -105,7 +105,7 @@ end program
 ```
 
 Сохраните файл как *hello.f90*
-*Ctrl+B* скомпилирует файл и выведет результат. В выпадающем меню выбрать *Fortran - Run*
+*Ctrl+B* скомпилирует файл и выведет результат. В выпадающем меню выбрать *Fortran - Run* (применимо только к SublimeText; компиляция в VSCode - F5. Остальные? См. раздел Notepad++ про консоль.)
 
 #### Sources
 Original article by Fortran-lang.org [here](https://fortran-lang.org/learn/os_setup). Translated for my classmates by me. 
