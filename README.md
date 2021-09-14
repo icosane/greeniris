@@ -53,7 +53,7 @@ sudo port install gcc10
 
 Последнее что нужно сделать
 В меню (Alt) выберете Tools > Build System > New Build System
-Скопируйте и вставьте туда следующее:
+Скопируйте и вставьте туда следующее: (не нужно если у вас Linux/Mac OS, выберите GFortran в Tools > Build System > GFortran)
 ```
 {
     "shell_cmd": "gfortran \"${file}\" -o \"${file_path}/${file_base_name}\"",
