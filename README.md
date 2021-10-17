@@ -80,10 +80,12 @@ sudo port install gcc10
  * [FORTRAN IntelliSense](https://marketplace.visualstudio.com/items?itemName=hansec.fortran-ls)
  * [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
  
-Fortran Breakpoint Support зависит от предыдущего расширения Modern Fortran, а также от Python и [Fortran Language Server](https://github.com/hansec/fortran-language-server), которые должны быть установлены отдельно.
+Fortran IntelliSense зависит от предыдущего расширения Modern Fortran, а также от Python и [Fortran Language Server](https://github.com/hansec/fortran-language-server), которые должны быть установлены отдельно.
 * [Fortran Breakpoint Support](https://marketplace.visualstudio.com/items?itemName=ekibun.fortranbreaker)
 
 Примечание: И Modern Fortran, и Fortran Breakpoint Support требуют ms-vscode.cpptools, для этого вам также необходимо установить расширение [C/C++ by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools).
+
+Примечание 2: Если Вам необходимо работать с достаточно простыми программами, и вы не собираетесь заниматься отладкой программы, то достаточно будет установить лишь *Modern Fortran* и *Code Runner*. C++ Tools будут установлены автоматически при установке расширения Modern Fortran.
 
 #### Настройка Notepad++
 В данном случае некоторым придется научиться работать с командной строкой.  
