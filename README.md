@@ -79,6 +79,7 @@ sudo port install gcc10
  * [Modern Fortran](https://marketplace.visualstudio.com/items?itemName=krvajalm.linter-gfortran)
  * [FORTRAN IntelliSense](https://marketplace.visualstudio.com/items?itemName=hansec.fortran-ls)
  * [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+ 
 Fortran Breakpoint Support зависит от предыдущего расширения Modern Fortran, а также от Python и [Fortran Language Server](https://github.com/hansec/fortran-language-server), которые должны быть установлены отдельно.
 * [Fortran Breakpoint Support](https://marketplace.visualstudio.com/items?itemName=ekibun.fortranbreaker)
 
@@ -108,4 +109,4 @@ end program
 *Ctrl+B* скомпилирует файл и выведет результат. В выпадающем меню выбрать *Fortran - Run* (применимо только к SublimeText; компиляция в VSCode - F5. Остальные? См. раздел Notepad++ про консоль.)
 
 #### Sources
-Original article by Fortran-lang.org [here](https://fortran-lang.org/learn/os_setup). Translated for my classmates by me. 
+Original article by Fortran-lang.org [here](https://fortran-lang.org/learn/os_setup). 
