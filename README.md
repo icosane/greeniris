@@ -1,4 +1,4 @@
-## Настройка Fortran для использования в любом текстовом редакторе (Visual Studio Code, Sublime Text, Atom, Notepad++, etc.)
+## Настройка Fortran для использования в любом текстовом редакторе
 
 
 
