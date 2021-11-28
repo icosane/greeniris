@@ -125,7 +125,7 @@ gfortran имя_вашей программы.f90
 **Notepad++**
 Посмотрите раздел **Настройка Notepad++** в котором подробно описан в том числе запуск и компиляция программы. 
 
-###Где настройка Emacs и Vim?
+### Где настройка Emacs и Vim?
 I'm too dumb to use those, sorry. I tried Vim, but I just can't.
 
 #### Sources
